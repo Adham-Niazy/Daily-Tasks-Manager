@@ -16,8 +16,11 @@
 
     <div class="tasks">
       <!-- COMPONENT -->
-
-      {{ $store.state.tasks }}
+      <Task
+        v-for="task in $store.state.tasks"
+        :key="task.id"
+        :task="task"
+        />
     </div>
   </main>
 </template>

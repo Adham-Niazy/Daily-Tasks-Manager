@@ -1,18 +1,14 @@
 export const state = () => ({
-  tasks: [
-    {
-      content: "Get Milk",
-    }
-  ]
+  tasks: []
 });
 
 export const mutations = {
   ADD_TASK (state, task) {
-    state.tasks = [ { content: task, done: false }, ...state.tasks ];
+    state.tasks = [ { id: new Date().toISOString()+task, content: task, done: false }, ...state.tasks ];
   },
 
   REMOVE_TASK ( state, task ) {
-    let FilteredTasks = state.filter( (t) => t.content !== task );
+    let FilteredTasks = state.tasks.filter( (t) => t.id !== task.id );
     state.tasks = FilteredTasks;
   },
 
