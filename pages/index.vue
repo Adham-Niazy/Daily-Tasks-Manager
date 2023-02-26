@@ -19,7 +19,7 @@
       <Task v-for="task in $store.state.tasks" :key="task.id" :task="task" />
     </div>
 
-    <div class="create-new">
+    <div class="create-new" v-if="$store.state.tasks.length >= 3">
       <Button @click="renewTasks">RENEW ALL TASKS</Button>
     </div>
 

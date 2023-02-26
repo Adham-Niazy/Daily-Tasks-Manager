@@ -36,6 +36,19 @@ main .create-new {
   max-width: 480px;
 }
 
+@media (max-width: 400px) {
+  main .create-new {
+    width: 80%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  main .create-new button {
+    margin-top: 1rem;
+  }
+}
+
 main .create-new input {
   appearance: none;
   border: none;
