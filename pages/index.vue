@@ -16,11 +16,11 @@
 
     <div class="tasks">
       <!-- COMPONENT -->
-      <Task
-        v-for="task in $store.state.tasks"
-        :key="task.id"
-        :task="task"
-        />
+      <Task v-for="task in $store.state.tasks" :key="task.id" :task="task" />
+    </div>
+
+    <div class="create-new">
+      <Button @click="renewTasks">RENEW ALL TASKS</Button>
     </div>
   </main>
 </template>
@@ -29,16 +29,19 @@
 export default {
   data() {
     return {
-      newTask: ""
-    }
+      newTask: "",
+    };
   },
   methods: {
     addTask() {
-      if ( this.newTask && this.newTask.length >= 3) {
-        this.$store.commit('ADD_TASK', this.newTask)
-        this.newTask = '';
+      if (this.newTask && this.newTask.length >= 3) {
+        this.$store.commit("ADD_TASK", this.newTask);
+        this.newTask = "";
       }
-    }
-  }
+    },
+    renewTasks() {
+      this.$store.commit("RENEW_ALL_TASK");
+    },
+  },
 };
 </script>

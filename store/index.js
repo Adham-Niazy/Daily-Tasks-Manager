@@ -3,19 +3,26 @@ export const state = () => ({
 });
 
 export const mutations = {
-  ADD_TASK (state, task) {
-    state.tasks = [ { id: new Date().toISOString()+task, content: task, done: false }, ...state.tasks ];
+  ADD_TASK(state, task) {
+    state.tasks = [{ id: new Date().toISOString() + task, content: task, done: false }, ...state.tasks];
     updateDataSource(DATA_SOURCE_KEY, state.tasks);
   },
 
-  REMOVE_TASK ( state, task ) {
-    let FilteredTasks = state.tasks.filter( (t) => t.id !== task.id );
+  REMOVE_TASK(state, task) {
+    let FilteredTasks = state.tasks.filter((t) => t.id !== task.id);
     state.tasks = FilteredTasks;
     updateDataSource(DATA_SOURCE_KEY, state.tasks);
   },
 
-  TOGGLE_TASK (state, task) {
+  TOGGLE_TASK(state, task) {
     task.done = !task.done;
+    updateDataSource(DATA_SOURCE_KEY, state.tasks);
+  },
+
+  RENEW_ALL_TASK(state) {
+    for (let i = 0; i < state.tasks.length; i++) {
+      state.tasks[i].done = false;
+    }
     updateDataSource(DATA_SOURCE_KEY, state.tasks);
   }
 }
