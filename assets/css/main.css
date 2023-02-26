@@ -123,3 +123,18 @@ main .tasks .task button.delete {
 .tasks .task.is-complete .content {
   text-decoration: line-through;
 }
+
+.copyright_box {
+  position: fixed;
+  bottom: 1rem;
+  background-color: rgb(47, 214, 111);
+  color: #fff;
+  padding: 5px;
+  font-weight: 700;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.copyright_box span {
+  text-decoration: underline;
+}

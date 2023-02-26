@@ -22,6 +22,10 @@
     <div class="create-new">
       <Button @click="renewTasks">RENEW ALL TASKS</Button>
     </div>
+
+    <a class="copyright_box" href="https://www.linkedin.com/in/adhamniazy" target="_blank">
+      Powered by <span>@AdhamNiazy</span> 💖
+    </a>
   </main>
 </template>
 
